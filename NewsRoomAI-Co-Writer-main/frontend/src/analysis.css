@@ -1,0 +1,271 @@
+/* ===============================
+   GLOBAL
+================================ */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.analysis-scroll {
+  height: calc(100vh - 24px);
+  width: 100vw;
+  overflow-y: auto;
+  background: #f7f9fc;
+  padding: 24px;
+}
+
+.analysis-page {
+  max-width: none;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+/* ===============================
+   TOP BAR
+================================ */
+.analysis-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.analysis-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===============================
+   BIAS COLOR STATES
+   (APPLY VIA CLASS ONLY, DOES NOT AFFECT LAYOUT)
+================================ */
+.bias-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+/* GREEN (Neutral) */
+.bias-green {
+  background-color: #dcfce7;
+  color: #14532d;
+}
+
+/* YELLOW (Moderate bias) — FIXED VISIBILITY */
+.bias-yellow {
+  background-color: #facc15; /* strong yellow */
+  color: #000000; /* BLACK text — important */
+}
+
+/* RED (High bias) */
+.bias-red {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
+
+/* ===============================
+   BIAS COLOR STATES
+   (LIGHT COLORS, TEXT VISIBLE)
+================================ */
+
+/* ===============================
+   DOWNLOAD BUTTON
+================================ */
+.download-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===============================
+   GRID
+================================ */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.analysis-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.article-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.article-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #374151;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+/* ===============================
+   ACCORDION
+================================ */
+.accordion {
+  margin-top: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  background: #f9fafb;
+  border: none;
+  padding: 14px 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion-body {
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.accordion-body p {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* ===============================
+   MISC
+================================ */
+.muted {
+  color: #6b7280;
+}
+
+.analysis-loading {
+  padding: 40px;
+  font-size: 16px;
+}
+/* ===============================
+   DOWNLOAD DROPDOWN
+================================ */
+
+.download-container {
+  position: relative;
+}
+
+.download-options {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 50;
+  min-width: 160px;
+}
+
+.download-options button {
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.download-options button:hover {
+  background: #f3f4f6;
+}
+/* ===============================
+   REAL CLICK FEEDBACK – DOWNLOAD OPTIONS
+   (NO JS CHANGES)
+================================ */
+.download-options button {
+  transition:
+    background-color 0.15s ease,
+    transform 0.05s ease;
+}
+
+.download-options button:hover {
+  background-color: #e6f7ef; 
+}
+
+.download-options button:active {
+  background-color: #10b981; 
+  color: #ffffff;
+  transform: scale(0.97); 
+}
+
+.download-options button:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+.app.dark .analysis-scroll {
+  background: #0b0f14;
+}
+
+.app.dark .analysis-topbar {
+  background: #020617;
+  border-color: #1e293b;
+  color: #e5e7eb;
+}
+
+.app.dark .analysis-card {
+  background: #020617;
+  border-color: #1e293b;
+  color: #e5e7eb;
+}
+
+.app.dark .article-text {
+  color: #cbd5e1;
+}

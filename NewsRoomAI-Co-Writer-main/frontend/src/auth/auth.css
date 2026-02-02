@@ -1,0 +1,123 @@
+/* =========================
+   AUTH OVERLAY (BACKGROUND)
+========================= */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* =========================
+   AUTH CARD (BOX)
+========================= */
+.auth-card {
+  background: #ffffff;
+  padding: 28px 26px;
+  width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: popup 0.25s ease-out;
+}
+
+/* =========================
+   TITLE
+========================= */
+.auth-card h2 {
+  text-align: center;
+  font-size: 24px;  
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+.auth-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.auth-card input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+.auth-card button:not(.link) {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card button:not(.link):hover {
+  background: #059669;
+}
+
+.auth-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* =========================
+   LINK BUTTONS
+========================= */
+.auth-card .link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.auth-card .link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

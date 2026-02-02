@@ -1,0 +1,632 @@
+/* ===============================
+   ROOT THEME
+================================ */
+.app {
+  height: 100vh;
+  background: #f7f9fc;
+  color: #111827;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ===============================
+   TOP BAR
+================================ */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.brand span {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.auth-link {
+  font-size: 13px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.auth-link.login {
+  font-weight: 600;
+}
+
+/* ===============================
+   MAIN GRID
+================================ */
+.grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 340px;
+  height: calc(100vh - 64px);
+}
+
+/* ===============================
+   LEFT SIDEBAR
+================================ */
+.panel {
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px;
+  overflow-y: auto ;
+
+}
+
+.panel-title {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin: 12px 0;
+}
+
+.recent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-list li {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.recent-list li:hover {
+  background: #f3f4f6;
+}
+
+/* ===============================
+   CENTER EDITOR
+================================ */
+.editor {
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+}
+
+.editor-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.editor-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.editor-body {
+  padding: 24px;
+  flex: 1;
+  padding-bottom: 12px;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+}
+.editor-body::-webkit-scrollbar {
+  display: none;      
+}
+
+.editor-body input,
+.editor-body textarea {
+  box-sizing: border-box;
+}
+
+
+.editor-body textarea {
+  width: 100%;
+  height: 390px;
+  resize: none;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  outline: none;
+  background: #ffffff;
+  margin-bottom: 8px;
+  overflow-y: auto;     
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.editor-body textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.editor-body .input-error,
+.editor-body div[style*="fee2e2"] {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+
+.editor-body textarea:focus {
+  border-color: #2563eb;
+}
+
+/* ===============================
+   EDITOR FOOTER
+================================ */
+.editor-footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  margin-top:2px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.footer-counter {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.analyze-pill {
+  background: linear-gradient(135deg, #10b981, #10b981);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(32, 180, 86, 0.35);
+  transition: all 0.2s ease;
+}
+
+.analyze-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.45);
+}
+
+.analyze-pill:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===============================
+   RIGHT PANEL
+================================ */
+.right {
+  background: #f7f9fc;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* ===============================
+   CARDS (MATCH ANALYSIS)
+================================ */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #374151;
+}
+
+.card.highlight {
+  border-left: 5px solid #10b981;
+}
+
+/* ===============================
+   BIAS BAR
+================================ */
+.bias-scale .bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.bias-scale .fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+/* ===============================
+   MISC
+================================ */
+.muted {
+  color: #6b7280;
+}
+
+.rewrite-box {
+  background: #f9fafb;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* ===============================
+   APP ROOT
+================================ */
+.app {
+  height: 100vh;
+  width: 100%;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.app.light {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* ===============================
+   APP ROOT
+================================ */
+.app {
+  height: 100vh;
+  width: 100%;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ===============================
+   TOP BAR
+================================ */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Light */
+.app.light .topbar {
+  background: #ffffff;
+}
+
+/* Dark */
+.app.dark .topbar {
+  background: #020617;
+  border-color: #1e293b;
+}
+/* =========================
+   AUTH BUTTONS (HOME PAGE)
+========================= */
+.auth-link {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+/* REGISTER BUTTON */
+.auth-link.register {
+  color: white;
+  border: 1px solid #10b981;
+  background: #10b981;
+}
+
+.auth-link.register:hover {
+  background: #10b981;
+  color: white;
+}
+
+/* LOGIN BUTTON */
+.auth-link.login {
+  color: white;
+  background: #10b981;
+  border: 1px solid #10b981;
+}
+
+.auth-link.login:hover {
+  background: #10b981;
+}
+
+/* =========================
+   USER MENU (AFTER LOGIN)
+========================= */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* USERNAME TEXT */
+.user-menu span {
+  font-weight: 500;
+  color: #111827;
+}
+
+/* LOGOUT BUTTON */
+.user-menu button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #10b981;
+  background: #10b981;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-menu button:hover {
+  background: #10b981;
+  color: white;
+}
+
+/* =========================
+   DARK MODE SUPPORT
+========================= */
+.app.dark .auth-link.register {
+  color: #a5b4fc;
+  border-color: #a5b4fc;
+}
+
+.app.dark .auth-link.login {
+  background: #818cf8;
+  border-color: #818cf8;
+}
+
+.app.dark .user-menu span {
+  color: #e5e7eb;
+}
+
+.app.dark .user-menu button {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+.app.dark .user-menu button:hover {
+  background: #f87171;
+  color: #111827;
+}
+.bias-scale {
+  margin: 12px 0;
+}
+
+.bias-scale .bar {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;     
+  border-radius: 999px;
+  overflow: hidden;        
+}
+
+.bias-scale .fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+
+  /* 🔥 makes footer stick to bottom of middle section */
+  margin-top: auto;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 18px; 
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border-radius: 999px; 
+
+  background: rgba(255, 255, 255, 0.779);
+  border: 1px solid #e5e7eb;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+/* ===========================
+   APP ROOT
+=========================== */
+.app {
+  height: 100vh;
+  width: 100%;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===========================
+   DARK MODE ROOT
+=========================== */
+.app.dark {
+  background-color: #0b0f14;
+  color: #e5e7eb;
+}
+
+/* ===========================
+   TOPBAR
+=========================== */
+.app.light .topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.app.dark .topbar {
+  background-color: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* ===========================
+   PANELS
+=========================== */
+.app.light .panel {
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+.app.dark .panel {
+  background: #020617;
+  border-right: 1px solid #1e293b;
+}
+
+/* ===========================
+   EDITOR
+=========================== */
+.app.light .editor {
+  background: #f7f9fc;
+}
+
+.app.dark .editor {
+  background: #020617;
+}
+
+.app.dark .editor-header,
+.app.dark .editor-footer {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+.app.dark textarea,
+.app.dark input {
+  background-color: #020617;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+.app.dark .right {
+  background: #020617;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+.app.dark .card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.app.dark .muted {
+  color: #94a3b8;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.app.dark button {
+  color: #e5e7eb;
+}
+
+.app.dark .icon-btn {
+  background: #020617;
+  border: 1px solid #334155;
+}
+
+.app.dark .analyze-pill {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* =========================
+   DARK THEME OVERRIDES
+========================= */
+.app.dark .card,
+.app.dark .rewrite-box {
+  background: #0b1220; /* dark navy */
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.app.dark .card p,
+.app.dark .rewrite-box,
+.app.dark .editor textarea,
+.app.dark .editor input {
+  color: #e5e7eb; 
+}
+/* Light theme */
+.new-page-btn {
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* Dark theme */
+.app.dark .new-page-btn {
+  background: #020617;            
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.app.dark .new-page-btn {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+
+/* Hover */
+.app.dark .new-page-btn:hover {
+  background: #020617;
+}
